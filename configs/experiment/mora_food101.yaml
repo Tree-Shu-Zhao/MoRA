@@ -1,0 +1,25 @@
+# @package _global_
+defaults:
+  - override /dataset: food101
+  - override /model: clip_mora
+
+EXP_NOTE: ClipMoRA_Food101
+
+model:
+  lora:
+    START_LAYER_INDEX: 10
+    SHARED_RANK: 4
+    VISION_RANK: 4
+    TEXT_RANK: 4
+    ALPHA: 0.01
+    TARGET_MODULES: [
+      "clip.vision_model.encoder.layers.{i}.self_attn.q_proj",
+      "clip.vision_model.encoder.layers.{i}.self_attn.v_proj",
+      "clip.text_model.encoder.layers.{i}.self_attn.q_proj",
+      "clip.text_model.encoder.layers.{i}.self_attn.v_proj",
+    ]
+
+train:
+  EPOCHS: 20
+  WEIGHT_DECAY: 2e-2
+  BATCH_SIZE: 256

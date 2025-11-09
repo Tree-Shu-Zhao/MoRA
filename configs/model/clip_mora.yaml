@@ -1,0 +1,17 @@
+NAME: ClipMoRA
+BACKBONE_NAME: openai/clip-vit-base-patch16
+NUM_CLASSES: ${dataset.NUM_CLASSES}
+
+lora:
+  TARGET_MODULES: [
+    "clip.vision_model.encoder.layers.{i}.self_attn.k_proj",
+    "clip.vision_model.encoder.layers.{i}.self_attn.v_proj",
+    "clip.text_model.encoder.layers.{i}.self_attn.k_proj",
+    "clip.text_model.encoder.layers.{i}.self_attn.v_proj",
+  ]
+  START_LAYER_INDEX: 10
+  SHARED_RANK: 8
+  VISION_RANK: 8
+  TEXT_RANK: 8
+  ALPHA: 0.1
+  DROPOUT: 0.1

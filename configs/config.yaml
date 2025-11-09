@@ -1,0 +1,18 @@
+# @package _global_
+defaults:
+  - _self_
+  - dataset: food101
+  - model: clipdora
+  - train: default
+  - test: default
+  - experiment: null
+  - hparams_search: null
+
+DATA_DIR: datasets
+EXP_NOTE: null
+OUTPUT_DIR: null # Specfied in hydra.run.dir
+SEED: 42
+
+hydra:
+  run:
+    dir: outputs/${EXP_NOTE}/${now:%Y-%m-%d_%H-%M-%S}

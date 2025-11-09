@@ -1,0 +1,16 @@
+NAME: mmimdb
+DATA_DIR: ${DATA_DIR}/mmimdb
+NUM_CLASSES: 23
+METRIC: f1_score
+MULTI_LABEL: True
+
+BACKBONE_NAME: ${model.BACKBONE_NAME}
+TRAIN_BATCH_SIZE: ${train.BATCH_SIZE}
+TEST_BATCH_SIZE: ${test.BATCH_SIZE}
+NUM_WORKERS: 8
+
+missing_params:
+  RATIO: 0.7
+  TYPE: "both"
+  BOTH_RATIO: 0.5
+  SAVE_ROOT: ${dataset.DATA_DIR}/missing_tables

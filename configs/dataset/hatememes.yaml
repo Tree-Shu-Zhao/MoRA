@@ -1,0 +1,16 @@
+NAME: hatememes
+DATA_DIR: ${DATA_DIR}/hateful_memes
+NUM_CLASSES: 2
+METRIC: auroc
+MULTI_LABEL: False
+
+BACKBONE_NAME: ${model.BACKBONE_NAME}
+TRAIN_BATCH_SIZE: ${train.BATCH_SIZE}
+TEST_BATCH_SIZE: ${test.BATCH_SIZE}
+NUM_WORKERS: 8
+
+missing_params:
+  RATIO: 0.7
+  TYPE: "both"
+  BOTH_RATIO: 0.5
+  SAVE_ROOT: ${dataset.DATA_DIR}/missing_tables
