@@ -99,7 +99,6 @@ If you found our paper useful, please cite it:
 ```bibtex
 @article{zhao2025mora,
   title={MoRA: Missing Modality Low-Rank Adaptation for Visual Recognition},
-  Tianyi ,  
   author={Zhao, Shu and Ahuja, Nilesh and Yu, Tan and Shen, Tianyi and Narayanan, Vijaykrishnan},
   journal={arXiv preprint arXiv:2511.06225},
   year={2025}
