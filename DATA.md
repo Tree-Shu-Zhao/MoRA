@@ -1,6 +1,5 @@
 
 # Data directory structure:
-Please organize the datasets as follows, otherwise you may need to revise the `write_*.py` files to meet your dataset path and files.
 
 ## MM-IMDb
 [MM-IMDb](https://github.com/johnarevalo/gmu-mmimdb) [(archive.org mirror)](https://archive.org/download/mmimdb)
