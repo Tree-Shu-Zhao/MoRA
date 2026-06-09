@@ -49,13 +49,22 @@ source .venv/bin/activate
 
 ## 📊 Data Preparation
 
-### Download Datasets
+You can either **download our preprocessed data (recommended)** or build it from the raw sources.
 
-Please refer to [**DATA.md**](DATA.md) for detailed instructions on downloading and organizing the datasets.
+### Option A — Download preprocessed data (recommended)
 
-### Preprocess Datasets
+All three datasets (MM-IMDb, Hateful Memes, Food-101), already preprocessed into the Arrow format the training code expects, are hosted on the Hugging Face Hub at [`TreezzZ/MoRA-data`](https://huggingface.co/datasets/TreezzZ/MoRA-data). The files drop directly into `datasets/` with no renaming, and the precomputed missing-modality masks used in the paper are included.
 
-After organizing the dataset directories, run the preprocessing script:
+```bash
+# from the repository root
+huggingface-cli download TreezzZ/MoRA-data --repo-type dataset --local-dir datasets
+```
+
+Since `DATA_DIR` defaults to `datasets`, you can now skip straight to [Usage](#-usage) — no preprocessing needed.
+
+### Option B — Build from raw sources
+
+Please refer to [**DATA.md**](DATA.md) for detailed instructions on downloading and organizing the raw datasets. After organizing the dataset directories, run the preprocessing script:
 
 ```bash
 bash scripts/preprocess.sh
