@@ -1,4 +1,9 @@
 
+> **Tip:** Preprocessed, ready-to-train versions of all three datasets are available at
+> [`TreezzZ/MoRA-data`](https://huggingface.co/datasets/TreezzZ/MoRA-data). See the
+> "Download preprocessed data" option in the [README](README.md#-data-preparation) to skip the
+> manual download/organize/preprocess steps below.
+
 # Data directory structure:
 
 ## MM-IMDb
