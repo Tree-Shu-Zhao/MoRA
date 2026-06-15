@@ -49,28 +49,12 @@ source .venv/bin/activate
 
 ## 📊 Data Preparation
 
-You can either **download our preprocessed data (recommended)** or build it from the raw sources.
-
-### Option A — Download preprocessed data (recommended)
-
 All three datasets (MM-IMDb, Hateful Memes, Food-101), already preprocessed into the Arrow format the training code expects, are hosted on the Hugging Face Hub at [`TreezzZ/MoRA-data`](https://huggingface.co/datasets/TreezzZ/MoRA-data). The files drop directly into `datasets/` with no renaming, and the precomputed missing-modality masks used in the paper are included.
 
 ```bash
 # from the repository root
 huggingface-cli download TreezzZ/MoRA-data --repo-type dataset --local-dir datasets
 ```
-
-Since `DATA_DIR` defaults to `datasets`, you can now skip straight to [Usage](#-usage) — no preprocessing needed.
-
-### Option B — Build from raw sources
-
-Please refer to [**DATA.md**](DATA.md) for detailed instructions on downloading and organizing the raw datasets. After organizing the dataset directories, run the preprocessing script:
-
-```bash
-bash scripts/preprocess.sh
-```
-
-This will generate the required preprocessed files for training.
 
 ## 🚀 Usage
 
@@ -106,10 +90,10 @@ python src/main.py \
 If you found our paper useful, please cite it:
 
 ```bibtex
-@article{zhao2025mora,
+@inproceedings{zhao2026mora,
   title={MoRA: Missing Modality Low-Rank Adaptation for Visual Recognition},
   author={Zhao, Shu and Ahuja, Nilesh and Yu, Tan and Shen, Tianyi and Narayanan, Vijaykrishnan},
-  journal={arXiv preprint arXiv:2511.06225},
-  year={2025}
+  booktitle={The Fourteenth International Conference on Learning Representations},
+  year={2026}
 }
 ```
